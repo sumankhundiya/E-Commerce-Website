@@ -34,6 +34,14 @@ function total_amount($cart){
       <p><strong>Total: </strong><?=number_format(total_amount($cart),2)?></p>
       <button type="submit" class="btn btn-primary">Update Cart</button>
       <a href="/e-commerce/cart_clear.php" class="btn btn-danger">Clear Cart</a>
+      <a href="/e-commerce/checkout.php"class="btn btn-danger">Check out</a>
+      
+       <a href="/e-commerce/place_order.php" 
+         class="btn btn-success ms-3"
+         id="placeOrderBtn"
+         style="<?= $subtotal>0 ? '' : 'display:none;' ?>">
+         Place Order
+      </a>
     </form>
   <?php endif; ?>
 </body>

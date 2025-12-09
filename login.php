@@ -2,29 +2,30 @@
 session_start();
 require 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_POST['login'])) {   // CLICKED LOGIN BUTTON
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Fetch user by email
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // ✅ Compare plain text passwords directly
     if ($user && $password === $user['password']) {
-        session_regenerate_id(true);
+        $_SESSION['id'] = $user['id'];
         $_SESSION['name'] = $user['username'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['profile_pic'] = $user['profile_pic'] ?? '';
-        header("Location: home.php");
+
+        header("Location: suman.php");
         exit;
     } else {
-        header("Location: " . $_SERVER['PHP_SELF'] . "?error=1");
+        header("Location: login.php?error=1");
         exit;
     }
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
 <style>
 body {
-  background-image: url('img2.jpg');
+  background-image: url('image/back1.avif');
   background-size: cover;
   background-position: center;
 }
@@ -51,7 +52,9 @@ p {
 <body>
 
 <div class="container">
+
     <form method="post" enctype="multipart/form-data" class="mx-auto p-4 border rounded" style="max-width: 500px;">
+        <h1>Login to Your Account</h1>
         <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" name="email" placeholder="Enter your email" autocomplete="off">

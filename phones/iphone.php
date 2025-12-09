@@ -1,3 +1,4 @@
+
 <?php
 // handle clear action (put near the top, before HTML)
 if (isset($_GET['clear']) && $_GET['clear'] == '1') {
@@ -43,8 +44,8 @@ foreach ($_SESSION['cart'] as $it) { $subtotal += (float)$it['price'] * intval($
 
 <!-- Header -->
 <header class="bg-primary text-white text-center py-5">
-  <h1>IPhones Phones</h1>
-  <p>Choose your favorite IPhones </p>
+  <h1>Android Phones</h1>
+  <p>Choose your favorite Android smartphone</p>
 </header>
 <?php if (!empty($added_message)): ?>
   <div class="container mt-3">
@@ -61,75 +62,348 @@ foreach ($_SESSION['cart'] as $it) { $subtotal += (float)$it['price'] * intval($
   </div>
 </div>
 
-<!-- Android Phones Products -->
+<!-- =================== EXCLUSIVE IPHONES (IP1-IP4) =================== -->
 <section class="py-5">
   <div class="container">
+    <h2 class="mb-4 fw-bold">🎨 Exclusive iPhone Collections (IP1-IP4)</h2>
     <div class="row g-4">
-
       <div class="col-md-3">
         <div class="card">
-          <img src="../images/iphone1.jpg" class="card-img-top img-fluid product-img" alt="iPhone 15 pro" loading="lazy">
+          <img src="../image/ip1.jpeg" class="product-img" alt="iPhone 15 pro">
           <div class="card-body text-center">
             <h5 class="card-title">iPhone 15 pro</h5>
-            <p class="text-success">$20000</p>
-            <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
-              <input type="hidden" name="product_id" value="iphone1">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_url" value="/e-commerce/phones/iphone.php">
-              <button type="submit" class="btn btn-primary">Buy Now</button>
-            </form>
+            <p class="text-success fw-bold">$18000</p>
+            <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
-          <img src="../images/iphone2.jpg" class="card-img-top img-fluid product-img" alt="iPhone 15" loading="lazy">
+          <img src="../image/ip2.webp" class="product-img" alt="iPhone 15">
           <div class="card-body text-center">
             <h5 class="card-title">iPhone 15</h5>
-            <p class="text-success">$15099</p>
-            <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
-              <input type="hidden" name="product_id" value="iphone2">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_url" value="/e-commerce/phones/iphone.php">
-              <button type="submit" class="btn btn-primary">Buy Now</button>
-            </form>
+            <p class="text-success fw-bold">$16500</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
-          <img src="../images/iphone3.jpg" class="card-img-top img-fluid product-img" alt="iPhone 14 pro" loading="lazy">
+          <img src="../image/ip3.webp" class="product-img" alt="iPhone 14 pro">
           <div class="card-body text-center">
             <h5 class="card-title">iPhone 14 pro</h5>
-            <p class="text-success">$13000</p>
-            <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
-              <input type="hidden" name="product_id" value="iphone3">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_url" value="/e-commerce/phones/iphone.php">
-              <button type="submit" class="btn btn-primary">Buy Now</button>
-            </form>
+            <p class="text-success fw-bold">$14500</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
-          <img src="../images/iphone4.jpg" class="card-img-top img-fluid product-img" alt="iPhone 14" loading="lazy">
+          <img src="../image/ip4.webp" class="product-img" alt="iPhone 14">
           <div class="card-body text-center">
             <h5 class="card-title">iPhone 14</h5>
-            <p class="text-success">$699</p>
-            <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
-              <input type="hidden" name="product_id" value="iphone4">
-              <input type="hidden" name="quantity" value="1">
-              <input type="hidden" name="return_url" value="/e-commerce/phones/iphone.php">
-              <button type="submit" class="btn btn-primary">Buy Now</button>
-            </form>
+            <p class="text-success fw-bold">$12000</p>
+              <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
+<hr class="my-5">
+
+<!-- =================== PREMIUM COLLECTIONS (IP5-IP8) =================== -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">💎 Premium Collections (IP5-IP8)</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip5.jpg" class="product-img" alt="iPhone 15 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15 pro</h5>
+            <p class="text-success fw-bold">$19000</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip6.jpeg" class="product-img" alt="iPhone 15">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15</h5>
+            <p class="text-success fw-bold">$17500</p>
+            <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip7.webp" class="product-img" alt="iPhone 14 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14 pro</h5>
+            <p class="text-success fw-bold">$15500</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip8.jpg" class="product-img" alt="iPhone 14">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14</h5>
+            <p class="text-success fw-bold">$13500</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="my-5">
+
+<!-- =================== TRENDY MODELS (IP9-IP12) =================== -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">🌟 Trendy Models (IP9-IP12)</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip9.webp" class="product-img" alt="iPhone 15 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15 pro</h5>
+            <p class="text-success fw-bold">$18500</p>
+              <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip10.jpeg" class="product-img" alt="iPhone 15">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15</h5>
+            <p class="text-success fw-bold">$16000</p>
+            <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip11.jpeg" class="product-img" alt="iPhone 14 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14 pro</h5>
+            <p class="text-success fw-bold">$14000</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip12.jpeg" class="product-img" alt="iPhone 14">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14</h5>
+            <p class="text-success fw-bold">$11500</p>
+              <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="my-5">
+
+<!-- =================== SPECIAL EDITION (IP13-IP16) =================== -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">✨ Special Edition (IP13-IP16)</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip13.png" class="product-img" alt="iPhone 15 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15 pro</h5>
+            <p class="text-success fw-bold">$19500</p>
+              <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip14.avif" class="product-img" alt="iPhone 15">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 15</h5>
+            <p class="text-success fw-bold">$17000</p>
+            <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip15.webp" class="product-img" alt="iPhone 14 pro">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14 pro</h5>
+            <p class="text-success fw-bold">$15000</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="../image/ip16.webp" class="product-img" alt="iPhone 14">
+          <div class="card-body text-center">
+            <h5 class="card-title">iPhone 14</h5>
+            <p class="text-success fw-bold">$12500</p>
+             <?php if (isset($_SESSION['name'])): ?>
+              <form method="post" action="/e-commerce/cart_add.php" data-ajax="1">
+                <input type="hidden" name="product_id" value="5g3">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="return_url" value="/e-commerce/phones/5gphones.php">
+                <button type="submit" class="btn btn-primary w-100">Buy Now</button>
+              </form>
+              <?php else: ?>
+              <a href="/e-commerce/sign.php" class="btn btn-danger w-100">Login to Buy</a>
+              <?php endif; ?>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
